@@ -17,5 +17,5 @@ This docker has three containers:
 
 ### Useful things ###
 * To access any container you can run: **docker-compose exec <container_name> bash** 
-* Website can be seen on http://localhost:\<Port selected on HTTPD_PORT\>
-* Phpmyadmin can be seen on http://localhost:\<Port selected on PHPMYADMIN_PORT\>
+* Website can be seen on http://localhost: Port selected on HTTPD_PORT
+* Phpmyadmin can be seen on http://localhost: Port selected on PHPMYADMIN_PORT

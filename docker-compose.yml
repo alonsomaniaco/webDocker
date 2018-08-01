@@ -28,7 +28,7 @@ services:
     hostname: ${HTTPD_HOSTNAME}
     depends_on:
       - db
-    image: custom-httpd
+    image: custom-httpd-${HTTPD_NAME}
     links:
         - db
     ports:

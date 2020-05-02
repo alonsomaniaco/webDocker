@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     container_name: ${MYSQL_NAME}
-    image: mariadb:latest
+    image: mariadb
     ports:
         - "${MYSQL_PORT}:3306"
     environment:
@@ -25,7 +25,6 @@ services:
       - db
   httpd:
     container_name: ${HTTPD_NAME}
-    hostname: ${HTTPD_HOSTNAME}
     depends_on:
       - db
     image: custom-httpd-${HTTPD_NAME}
@@ -38,7 +37,7 @@ services:
       - "./docker-files/bashrc_user:/home/application/.bashrc"
       - "./docker-files/bashrc_root:/root/.bashrc"
     environment:
-      - WEB_DOCUMENT_ROOT="/var/www/html"
+      - WEB_DOCUMENT_ROOT="${HTTPD_DOCUMENT_ROOT}"
     build:
       context: ./docker-files
       dockerfile: Dockerfile

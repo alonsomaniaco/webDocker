@@ -1,7 +1,4 @@
-FROM webdevops/php-apache-dev:5.6
+FROM webdevops/php-apache-dev:centos-7
 
-RUN apt-get update \
-    && apt-get install -y vim \
-    && apt-get install -y mysql-client \
-    && composer global require drush/drush:8.x \
-    && su application -c 'composer global require drush/drush:8.x'
+RUN yum remove -y php-mysqlnd \
+	&& yum install -y mysql php-mysql

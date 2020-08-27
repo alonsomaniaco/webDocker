@@ -1,4 +1,4 @@
-FROM webdevops/php-apache-dev:ubuntu-14.04
+FROM webdevops/php-apache-dev:5.6
 
 RUN apt-get update \
     && apt-get install -y vim \
